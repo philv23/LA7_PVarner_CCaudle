@@ -7,6 +7,7 @@ public class Node<E> implements INode {
 	public Node(E dataValue) {
 		this.dataValue = dataValue;
 		
+		
 	}
 	public Node(E dataValue, Node<E> nextNode) {
 		this.dataValue = dataValue;
