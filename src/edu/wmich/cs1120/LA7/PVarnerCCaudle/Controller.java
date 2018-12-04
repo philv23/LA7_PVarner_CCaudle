@@ -15,6 +15,13 @@ public class Controller implements IController {
 	public ArrayList <String> courseNum = new ArrayList();
 	public ArrayList <String> cap = new ArrayList();
 	
+	public ArrayList <String> name = new ArrayList();
+	public ArrayList <String> level = new ArrayList();
+	public ArrayList <String> studentMajor = new ArrayList();
+	public ArrayList <String> department = new ArrayList();
+	public ArrayList <String> reqNum = new ArrayList();
+	
+	
 	public Controller(PriorityQueue<Request> requestQueue, LinkedList<Course> courses, BufferedReader fileIn, BufferedReader fileIn1) {
 		this.courses = courses;
 		this.requestQueue = requestQueue;
@@ -31,7 +38,7 @@ public class Controller implements IController {
 		try {
 			Scanner scanner = new Scanner(file);
 			while(scanner.hasNextLine()) {
-				array = scanner.toString().split(",");
+				array = scanner.nextLine().toString().split(",");
 				major.add(array[0]);
 				courseNum.add(array[1]);
 				cap.add(array[2]);
@@ -50,7 +57,25 @@ public class Controller implements IController {
 
 	@Override
 	public void readRequestFile() {
-		// TODO Auto-generated method stub
+		String[] array = new String[5];
+		
+		File file = new File(fileIn.toString());
+		try {
+			Scanner scanner = new Scanner(file);
+			while(scanner.hasNextLine()) {
+				array = scanner.nextLine().toString().split(",");
+				major.add(array[0]);
+				courseNum.add(array[1]);
+				cap.add(array[2]);
+				scanner.close();
+			}
+			
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		
 	}
 
