@@ -3,6 +3,7 @@ package edu.wmich.cs1120.LA7.PVarnerCCaudle;
 public class Node<E> implements INode {
 	private E dataValue;
 	Node<E> nextNode;
+	public Node next;
 	
 	public Node(E dataValue) {
 		this.dataValue = dataValue;
