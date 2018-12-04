@@ -1,11 +1,21 @@
 package edu.wmich.cs1120.LA7.PVarnerCCaudle;
 
 public class PriorityQueue<E> {
-	
-	    // Determine if the priority queue is empty.
-		public boolean isEmpty() {
-			return true;
+		
+		LinkedList<E> pQueue = new LinkedList<E>();
+		
+		
+	    public PriorityQueue() {
 			
+		}
+		// Determine if the priority queue is empty.
+		public boolean isEmpty() {
+			if(pQueue.isEmpty()) {
+				return true;
+			}
+			else {
+				return false;
+			}
 		}
 		// Add object received to the priority queue taking into consideration the rules governing priority.
 		public void enqueue(E data) {
@@ -13,11 +23,22 @@ public class PriorityQueue<E> {
 		}
 		// Remove the next object to be processed from the priority queue.
 		public E dequeue() {
-			return null;
+			LinkedList<E> temp = new LinkedList<E>();
+			E processed;
+			processed = pQueue.get(0);
+			for(int i=0; i<pQueue.size(); i++) {
+				
+				temp.add(pQueue.get(i+1));
+			}
+			pQueue = temp;
+			return processed;
 			
 		}
 		// Print the contents of the queue
 		public void Qprint() {
+			for(int i=0; i<pQueue.size(); i++){
+				System.out.println(pQueue.get(i));
+			}
 			
 		}
 }
