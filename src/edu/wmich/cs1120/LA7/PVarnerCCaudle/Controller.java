@@ -1,19 +1,21 @@
 package edu.wmich.cs1120.LA7.PVarnerCCaudle;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Controller implements IController {
 	public LinkedList<Course> courses;
 	public PriorityQueue<Request> requestQueue;
-	public String fileIn;
-	public String fileIn1;
-	public String major;
-	public String courseNum;
-	public String cap;
+	public BufferedReader fileIn;
+	public BufferedReader fileIn1;
+	public ArrayList <String> major = new ArrayList();
+	public ArrayList <String> courseNum = new ArrayList();
+	public ArrayList <String> cap = new ArrayList();
 	
-	public Controller(PriorityQueue<Request> requestQueue, LinkedList<Course> courses, String fileIn, String fileIn1) {
+	public Controller(PriorityQueue<Request> requestQueue, LinkedList<Course> courses, BufferedReader fileIn, BufferedReader fileIn1) {
 		this.courses = courses;
 		this.requestQueue = requestQueue;
 		this.fileIn = fileIn;
@@ -25,14 +27,15 @@ public class Controller implements IController {
 		// TODO Auto-generated method stub
 		String[] array = new String[3];
 		
-		File file = new File(fileIn);
+		File file = new File(fileIn.toString());
 		try {
 			Scanner scanner = new Scanner(file);
 			while(scanner.hasNextLine()) {
 				array = scanner.toString().split(",");
-				major = array[0];
-				courseNum = array[1];
-				cap = array[2];
+				major.add(array[0]);
+				courseNum.add(array[1]);
+				cap.add(array[2]);
+				scanner.close();
 			}
 			
 			
@@ -42,12 +45,13 @@ public class Controller implements IController {
 		}
 		
 		
+		
 	}
 
 	@Override
 	public void readRequestFile() {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override

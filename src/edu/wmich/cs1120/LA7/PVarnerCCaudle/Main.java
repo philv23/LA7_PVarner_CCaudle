@@ -1,12 +1,13 @@
 package edu.wmich.cs1120.LA7.PVarnerCCaudle;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 
 public class Main {
 
-	public static void main(String[] args) {
-		PriorityQueue<Request> requestQueue = new PriorityQueue<Request>();
+	public static void main(String[] args) throws FileNotFoundException {
+		/*PriorityQueue<Request> requestQueue = new PriorityQueue<Request>();
 		LinkedList<Course> courses = new LinkedList<Course>();
 		BufferedReader fileIn = new BufferedReader(new FileReader("course.txt"));
 		BufferedReader fileIn1 = new BufferedReader(new FileReader("request.txt"));
@@ -14,9 +15,11 @@ public class Main {
 		control.readCourseFile();
 		control.readRequestFile();
 		control.processRequests();
-		control.printClassList();
+		control.printClassList();*/
+		
+		BufferedReader fileIn = new BufferedReader(new FileReader("course.txt"));
+		IController control = new Controller(fileIn);
 
-		//hello
 
 	}
 
