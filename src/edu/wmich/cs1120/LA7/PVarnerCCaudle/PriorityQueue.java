@@ -3,6 +3,7 @@ package edu.wmich.cs1120.LA7.PVarnerCCaudle;
 public class PriorityQueue<E> {
 		
 		LinkedList<E> pQueue = new LinkedList<E>();
+		LinkedList<Request> students = new LinkedList<Request>();
 		
 		
 	    public PriorityQueue() {
@@ -19,6 +20,15 @@ public class PriorityQueue<E> {
 		}
 		// Add object received to the priority queue taking into consideration the rules governing priority.
 		public void enqueue(E data) {
+			Course course = new Course();
+			if(!course.isFull()) {
+				pQueue.add(data);
+			}
+			else {
+				if(((Request) data).getCourseDept() == ((Request) data).getStudentDept()) {
+					
+				}
+			}
 			
 		}
 		// Remove the next object to be processed from the priority queue.
