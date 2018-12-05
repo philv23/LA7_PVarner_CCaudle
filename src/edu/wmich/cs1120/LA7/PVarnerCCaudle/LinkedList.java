@@ -1,13 +1,11 @@
 package edu.wmich.cs1120.LA7.PVarnerCCaudle;
 
-import edu.wmich.cs1120.linkedlists.LinkedList.Node;
-
 public class LinkedList<E> {
 	
-	private String value;
-	private Node next;
-	private Node head;
-	private Node tail;
+	public String value;
+	public Node next;
+	public Node head;
+	public Node tail;
 	
 	
 	public boolean isEmpty() {
@@ -32,7 +30,13 @@ public class LinkedList<E> {
 		
 	}
 	// get the object in specific position in the LinkedList used to print the enrolled student contents inside the Course class and return the name
-	public E get(int position);
+	public E get(int position) {
+		return null;
+		
+	}
 	// Return number of elements in the list.
-	public int size();
+	public int size() {
+		return 0;
+		
+	}
 }
