@@ -7,6 +7,7 @@ import java.util.StringTokenizer;
 public class Controller implements IController {
 	public LinkedList<Course> courses;
 	public PriorityQueue<Request> requestQueue;
+	public PriorityQueue<Request> requestQueue2;
 	public BufferedReader fileIn;
 	public BufferedReader fileIn1;
 
@@ -14,6 +15,7 @@ public class Controller implements IController {
 			BufferedReader fileIn1) {
 		this.courses = courses;
 		this.requestQueue = requestQueue;
+		this.requestQueue2 = requestQueue;
 		this.fileIn = fileIn;
 		this.fileIn1 = fileIn1;
 	}
@@ -72,7 +74,12 @@ public class Controller implements IController {
 				
 				Request req = new Request(name, major, year, dept, num, gpa);
 				
-				requestQueue.enqueue(req);
+				if(num == 1040) {
+					requestQueue.enqueue(req);
+				}
+				else {
+					requestQueue2.enqueue(req);
+				}
 
 				System.out.println(strCurrentLine);
 			}
@@ -85,9 +92,23 @@ public class Controller implements IController {
 
 	@Override
 	public void processRequests() {
-		// TODO Auto-generated method stub
+		Course one = courses.get(1);
 		
+		for(int i = 0; i < requestQueue.pQueue.size(); i++ ) {
+			Request a = requestQueue.pQueue.get(i);
+			System.out.println(a.getStudentName());
+		}
+		
+		
+		/*while(!one.isFull()) {
+			Request a = requestQueue.pQueue.get(i);
+			one.addStudent(a.getStudentName());
+			System.out.println("Request Processed");
+			System.out.println(a.getStudentName() + " successfully registered " + a.getCourseDept() + " " + a.getCourseNumber());
+			i++;
+		}*/
 	}
+		
 
 	@Override
 	public void printClassList() {
