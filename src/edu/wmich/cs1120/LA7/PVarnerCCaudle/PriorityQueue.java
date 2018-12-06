@@ -21,6 +21,8 @@ public class PriorityQueue<E> {
 		// Add object received to the priority queue taking into consideration the rules governing priority.
 		public void enqueue(E data) {
 			
+			Request r = (Request) data;
+			
 			for( int i = 0; i < students.size(); i++) {
 				Request x = students.get(i);
 				
