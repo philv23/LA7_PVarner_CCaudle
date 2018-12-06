@@ -2,6 +2,7 @@ package edu.wmich.cs1120.LA7.PVarnerCCaudle;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.Random;
 import java.util.StringTokenizer;
 
 public class Controller implements IController {
@@ -50,6 +51,8 @@ public class Controller implements IController {
 	@Override
 	public void readRequestFile() {
 		String strCurrentLine;
+		System.out.println("");
+		System.out.println("<<<<<<<<<<<< Beginning of Queue Contents >>>>>>>>>>>>>>>>>");
 
 		try {
 			while ((strCurrentLine = fileIn1.readLine()) != null) {
@@ -72,6 +75,15 @@ public class Controller implements IController {
 					gpa[i][1] = Double.parseDouble(st.nextToken());
 				}
 				
+				String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+				
+				Random random = new Random();
+				alphabet.charAt(random.nextInt(alphabet.length()));
+				
+				String process = generateString(8);
+				
+				System.out.println("Request@"+process);
+				
 				
 				Request req = new Request(name, major, year, dept, num, gpa);
 				
@@ -84,6 +96,7 @@ public class Controller implements IController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		System.out.println("<<<<<<<<<<<< End of Queue Contents >>>>>>>>>>>>>>>>>\n");
 
 	}
 
@@ -144,6 +157,18 @@ public class Controller implements IController {
 	public Course getCourse(String courseDept, int courseNumber) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	public String generateString(int length) {
+		String alphabet = "abcde0123456789";
+	    Random random = new Random();
+	    StringBuilder builder = new StringBuilder(length);
+
+	    for (int i = 0; i < length; i++) {
+	        builder.append(alphabet.charAt(random.nextInt(alphabet.length())));
+	    }
+
+	    return builder.toString();
 	}
 
 }
