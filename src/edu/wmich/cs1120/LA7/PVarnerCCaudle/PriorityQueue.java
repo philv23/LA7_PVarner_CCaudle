@@ -20,7 +20,7 @@ public class PriorityQueue<E> {
 		}
 		// Add object received to the priority queue taking into consideration the rules governing priority.
 		public void enqueue(E data) {
-			Course course = new Course();
+			Course course = new Course(((Request) data).getCourseDept(),((Request) data).getCourseNumber(),((Request) data).);
 			if(!course.isFull()) {
 				pQueue.add(data);
 			}
