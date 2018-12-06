@@ -48,12 +48,13 @@ public class PriorityQueue<E> {
 				for(int i=0; i<pQueue.size(); i++) {
 					if(i == replaceAt) {
 						temp.add(data);
+						temp.add(pQueue.get(i));
 					}
 					else {
 						temp.add(pQueue.get(i));
 					}
 				}
-				
+				  
 				pQueue = temp;
 			}
 			

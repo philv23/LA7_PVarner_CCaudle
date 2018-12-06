@@ -39,13 +39,13 @@ public class Request<T> implements Comparable<T> {
 	 */
 	public int yearsFromGraduation(String level) {
 		int years = 0;
-		if (level == "Freshman") {
+		if (level.equals("Freshman")) {
 			years = 3;
 		}
-		if (level == "Junior") {
+		if (level.equals("Junior")) {
 			years = 1;
 		}
-		if (level == "Senior") {
+		if (level.equals("Senior")) {
 			years = 0;
 		} else {
 			years = 2;

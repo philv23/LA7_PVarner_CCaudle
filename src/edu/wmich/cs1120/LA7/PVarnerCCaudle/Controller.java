@@ -72,14 +72,14 @@ public class Controller implements IController {
 					gpa[i][1] = Double.parseDouble(st.nextToken());
 				}
 				
+				System.out.println(num);
+				
 				Request req = new Request(name, major, year, dept, num, gpa);
 				
-				if(num == 1040) {
-					requestQueue.enqueue(req);
-				}
-				else {
-					requestQueue2.enqueue(req);
-				}
+				boolean flag = false;
+				
+				requestQueue.enqueue(req);
+				
 
 				System.out.println(strCurrentLine);
 			}
@@ -92,22 +92,23 @@ public class Controller implements IController {
 
 	@Override
 	public void processRequests() {
-		Course one = courses.get(1);
+		Course one = courses.get(0);
 		
-		for(int i = 0; i < requestQueue.pQueue.size(); i++ ) {
+		int i = 0;
+		
+		while(!one.isFull() && i < requestQueue.pQueue.size()) {
 			Request a = requestQueue.pQueue.get(i);
-			System.out.println(a.getStudentName());
-		}
-		
-		/*int i = 0;
-		
-		while(!one.isFull()) {
-			Request a = requestQueue.pQueue.get(i);
-			one.addStudent(a.getStudentName());
-			System.out.println("Request Processed");
-			System.out.println(a.getStudentName() + " successfully registered " + a.getCourseDept() + " " + a.getCourseNumber());
+			
+			if(a.getCourseNumber() == one.num2) {
+				one.addStudent(a.getStudentName());
+				System.out.println("Request Processed");
+				System.out.println(a.getStudentName() + " successfully registered " + a.getCourseDept() + " " + a.getCourseNumber());
+				
+			}
+			
+			
 			i++;
-		}*/
+		}
 	}
 		
 

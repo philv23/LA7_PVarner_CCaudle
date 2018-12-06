@@ -5,6 +5,7 @@ public class Course<E> implements ICourse {
 	
 	String dept;
 	String num;
+	int num2;
 	int max;
 	LinkedList<E> list = new LinkedList<E>();
 	
@@ -19,6 +20,7 @@ public class Course<E> implements ICourse {
 		this.dept = dept;
 		this.num = num;
 		this.max = max;
+		num2 = Integer.parseInt(num);
 	}
 
 	@Override
