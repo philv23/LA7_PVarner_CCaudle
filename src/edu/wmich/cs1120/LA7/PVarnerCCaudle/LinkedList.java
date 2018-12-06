@@ -7,7 +7,10 @@ public class LinkedList<E> {
 	public Node head;
 	public Node tail;
 	
-	
+	/**
+	 * See's if the list is empty.  
+	 * @return boolean
+	 */
 	public boolean isEmpty() {
 		if (head == null) {
 			return true;
