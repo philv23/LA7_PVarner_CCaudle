@@ -72,7 +72,6 @@ public class Controller implements IController {
 					gpa[i][1] = Double.parseDouble(st.nextToken());
 				}
 				
-				System.out.println(num);
 				
 				Request req = new Request(name, major, year, dept, num, gpa);
 				
@@ -80,8 +79,6 @@ public class Controller implements IController {
 				
 				requestQueue.enqueue(req);
 				
-
-				System.out.println(strCurrentLine);
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -92,7 +89,9 @@ public class Controller implements IController {
 
 	@Override
 	public void processRequests() {
-		Course one = courses.get(0);
+		for(int j = 0; j <courses.size(); j++) {
+		
+		Course one = courses.get(j);
 		
 		int i = 0;
 		
@@ -108,6 +107,23 @@ public class Controller implements IController {
 			
 			
 			i++;
+		}
+		
+		while(one.isFull() && i < requestQueue.pQueue.size()) {
+			Request a = requestQueue.pQueue.get(i);
+			
+			if(a.getCourseNumber() == one.num2) {
+				System.out.println("Request Processed");
+				System.out.println(a.getStudentName() + " cannot be registered for " + a.getCourseDept() + " " + a.getCourseNumber() + " Course is Full");
+				
+			}
+			
+			
+			i++;
+		}
+		
+		
+		
 		}
 	}
 		
