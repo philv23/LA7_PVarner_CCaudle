@@ -4,13 +4,13 @@ public interface INode<E> {
 	    // Returns the data stored in this node.
 	    /**
 	     * Returns the data stored in this node.
-	     * @return dataValue
+	     * @return E dataValue
 	     */
 	    E getData();
 	    // Returns the node next to this node.
 	    /**
 	     * Returns the node next to this node.
-	     * @return nextNode
+	     * @return Node nextNode
 	     */
 		Node getNext();
 		// Sets node received as the next node to this node.

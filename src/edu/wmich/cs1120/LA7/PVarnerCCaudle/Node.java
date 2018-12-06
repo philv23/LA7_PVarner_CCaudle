@@ -27,7 +27,7 @@ public class Node<E> implements INode {
 	@Override
 	/**
 	 * Returns the data stored in this node.
-	 * @return dataValue
+	 * @return E
 	 */
 	public E getData() {
 		return dataValue;
@@ -36,7 +36,7 @@ public class Node<E> implements INode {
 	@Override
 	/** 
 	 * Returns the node next to this node.
-	 * @return nextNode
+	 * @return Node
 	 */
 	public Node getNext() {
 		return nextNode;

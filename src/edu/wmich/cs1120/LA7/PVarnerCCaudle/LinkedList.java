@@ -19,6 +19,10 @@ public class LinkedList<E> {
 		}
 	}
 	// Add object received to the linked list if he/she has the priority.
+	/**
+	 * Add object received to the linked list if he/she has the priority.
+	 * @param item
+	 */
 	public void add(E item) {
 		if (isEmpty()) {
 			Node newNode = new Node(item);
@@ -33,6 +37,11 @@ public class LinkedList<E> {
 		
 	}
 	// get the object in specific position in the LinkedList used to print the enrolled student contents inside the Course class and return the name
+	/**
+	 * get the object in specific position in the LinkedList used to print the enrolled student contents inside the Course class and return the name.
+	 * @param position
+	 * @return E 
+	 */
 	public E get(int position) {
 		Node head1 = head;
 		
@@ -44,6 +53,10 @@ public class LinkedList<E> {
 		
 	}
 	// Return number of elements in the list.
+	/**
+	 * Return number of elements in the list.
+	 * @return integer
+	 */
 	public int size() {
 		Node head1 = head;
 		int i = 0;

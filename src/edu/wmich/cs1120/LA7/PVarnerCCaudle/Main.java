@@ -5,7 +5,11 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 
 public class Main {
-
+	/**
+	 * Handles the flow of the program and uses the .txt files as parameters for the called objects.  
+	 * @param args
+	 * @throws FileNotFoundException
+	 */
 	public static void main(String[] args) throws FileNotFoundException {
 		PriorityQueue<Request> requestQueue = new PriorityQueue<Request>();
 		LinkedList<Course> courses = new LinkedList<Course>();
