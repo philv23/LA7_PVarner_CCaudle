@@ -21,28 +21,27 @@ public class PriorityQueue<E> {
 		// Add object received to the priority queue taking into consideration the rules governing priority.
 		public void enqueue(E data) {
 			LinkedList<E> temp = new LinkedList<E>();
+			int replaceAt = 0;
 			Request r = (Request) data;
 			
 			if(isEmpty()) {
 				pQueue.add(data);
 			}
 			else {
-				if(r.getStudentDept() != r.getCourseDept()) {
-					
+				for(int i=0; i<pQueue.size(); i++) {
+					if(r.compareTo(pQueue.get(i)) == 0) {
+						replaceAt = i;
+					}
 				}
-				else {
-					
+				for(int i=0; i<pQueue.size(); i++) {
+					if(i == replaceAt) {
+						temp.add(data);
+					}
+					else {
+						temp.add(pQueue.get(i));
+					}
 				}
-			}
-			
-			for(int i=0; i<pQueue.size(); i++) {
-				temp
-			}
-			
-			for( int i = 0; i < students.size(); i++) {
-				Request x = students.get(i);
-				
-				
+				pQueue = temp;
 			}
 			
 			
