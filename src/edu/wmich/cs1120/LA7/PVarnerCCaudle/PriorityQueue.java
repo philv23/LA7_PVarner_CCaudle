@@ -20,13 +20,8 @@ public class PriorityQueue<E> {
 		}
 		// Add object received to the priority queue taking into consideration the rules governing priority.
 		public void enqueue(E data) {
-			if(pQueue.size() == 0) {
-				pQueue.add(data);
-			}
-			else {
-				
-			}
 			
+			pQueue.add(data);
 			
 			
 		}
