@@ -85,7 +85,9 @@ public class Controller implements IController {
 
 	@Override
 	public void processRequests() {
-		// TODO Auto-generated method stub
+	
+		
+		
 
 	}
 
@@ -97,13 +99,12 @@ public class Controller implements IController {
 
 	@Override
 	public void addRequest(Request req) {
-		// TODO Auto-generated method stub
+		requestQueue.enqueue(req);
 
 	}
 
 	@Override
 	public Course getCourse(String courseDept, int courseNumber) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
