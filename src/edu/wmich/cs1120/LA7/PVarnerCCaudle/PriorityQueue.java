@@ -33,6 +33,8 @@ public class PriorityQueue<E> {
 			LinkedList<E> temp = new LinkedList<E>();
 			int replaceAt = 0;
 			Request r = (Request) data;
+			int x = 0;
+			
 			
 			if(isEmpty()) {
 				pQueue.add(data);
@@ -51,10 +53,9 @@ public class PriorityQueue<E> {
 						temp.add(pQueue.get(i));
 					}
 				}
+				
 				pQueue = temp;
 			}
-			
-			
 			
 		}
 		// Remove the next object to be processed from the priority queue.

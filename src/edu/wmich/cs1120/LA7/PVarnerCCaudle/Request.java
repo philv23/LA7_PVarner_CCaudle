@@ -117,7 +117,7 @@ public class Request<T> implements Comparable<T> {
 		Request req = (Request) o;
 		int num = 0;
 		
-		if(req.studentDept == "CS" && studentDept != "CS") {
+		if(req.studentDept.equals("CS") && !studentDept.equals("CS") ){
 			num = 1;	
 		}
 		if(num == 0 && yearsFromGraduation(req.studentLevel) < yearsFromGraduation(studentLevel)) {

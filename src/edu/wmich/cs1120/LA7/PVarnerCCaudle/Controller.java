@@ -99,8 +99,9 @@ public class Controller implements IController {
 			System.out.println(a.getStudentName());
 		}
 		
+		/*int i = 0;
 		
-		/*while(!one.isFull()) {
+		while(!one.isFull()) {
 			Request a = requestQueue.pQueue.get(i);
 			one.addStudent(a.getStudentName());
 			System.out.println("Request Processed");
