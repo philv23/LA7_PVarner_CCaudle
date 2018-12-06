@@ -31,17 +31,26 @@ public class LinkedList<E> {
 	}
 	// get the object in specific position in the LinkedList used to print the enrolled student contents inside the Course class and return the name
 	public E get(int position) {
-		//hello
-		String name;
+		Node head1 = head;
+		
 		for(int i=0; i<position; i++) {
+			head1 = head1.next;
 			
 		}
-		return null;
+		return (E) head1.getData();
 		
 	}
 	// Return number of elements in the list.
 	public int size() {
-		return 0;
+		Node head1 = head;
+		int i = 0;
+		
+		while(head1 != null) {
+			head1 = head1.next;
+			i++;
+		}
+		
+		return i;
 		
 	}
 }
