@@ -49,8 +49,8 @@ public class Request<T> implements Comparable<T> {
 		
 		
 		for (int i = 0; i < GPA_Array.length; i++) {
-			calc = GPA_Array[i][i] * GPA_Array[i][i+1];
-			credits = credits + GPA_Array[i][i+1];
+			calc = GPA_Array[i][0] * GPA_Array[i][1];
+			credits = credits + GPA_Array[i][1];
 			gpa = gpa + calc;
 		}
 		
