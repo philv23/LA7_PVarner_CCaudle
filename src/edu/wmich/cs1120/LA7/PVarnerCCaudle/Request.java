@@ -80,8 +80,20 @@ public class Request<T> implements Comparable<T> {
 	
 	@Override
 	public int compareTo(T o) {
-		// TODO Auto-generated method stub
-		return 0;
+		Request req = (Request) o;
+		int num = 0;
+		
+		if(req.studentDept == "CS" && studentDept != "CS") {
+			num = 1;	
+		}
+		if(num == 0 && yearsFromGraduation(req.studentLevel) < yearsFromGraduation(studentLevel)) {
+			num = 1;
+		}
+		if(num == 0 && GPA_Cal(req.GPA_Array) > GPA_Cal(GPA_Array)) {
+			num = 1;
+		}
+		
+		return num;
 	}
 	
 	
