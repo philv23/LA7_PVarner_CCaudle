@@ -13,13 +13,14 @@ public class Controller implements IController {
 	public BufferedReader fileIn1;
 
 	ArrayList<String> processes = new ArrayList<String>();
-	
-	
+
 	/**
 	 * constructor sets courses list, requestQueue, and the input files
 	 * 
-	 * @param dataValue
-	 * @param nextNode
+	 * @param courses
+	 * @param requestQueue
+	 * @param fileIn
+	 * @param fileIn1
 	 */
 
 	public Controller(PriorityQueue<Request> requestQueue, LinkedList<Course> courses, BufferedReader fileIn,
@@ -29,6 +30,15 @@ public class Controller implements IController {
 		this.fileIn = fileIn;
 		this.fileIn1 = fileIn1;
 	}
+
+	/**
+	 * Reads the course file, creates course objects, adds to list of Courses
+	 * 
+	 * @param strCurrentLine String to hold current line
+	 * @param dept           Course department
+	 * @param num            Course Number
+	 * @param max            Course maximum
+	 */
 
 	@Override
 	public void readCourseFile() {
@@ -56,6 +66,19 @@ public class Controller implements IController {
 		}
 
 	}
+
+	/**
+	 * Reads the request file file, creates request objects, adds to list of
+	 * requests, calling enqueue method
+	 * 
+	 * @param strCurrentLine String to hold current line
+	 * @param name           Student Name
+	 * @param year           Student year
+	 * @param major          Student major
+	 * @param num            Student class department
+	 * @param gpa            Array of student grades and credits
+	 * @param req            Request object to be added
+	 */
 
 	@Override
 	public void readRequestFile() {
@@ -110,6 +133,13 @@ public class Controller implements IController {
 
 	}
 
+	/**
+	 * Iterates through requests, adds Students to classes until class is full
+	 * 
+	 * @param one Course object to hold students
+	 * @param a   Request object to hold request being handled
+	 */
+
 	@Override
 	public void processRequests() {
 
@@ -149,6 +179,12 @@ public class Controller implements IController {
 		}
 	}
 
+	/**
+	 * Prints the names of all the students in each class
+	 * 
+	 * 
+	 */
+
 	@Override
 	public void printClassList() {
 		System.out.println("");
@@ -163,11 +199,24 @@ public class Controller implements IController {
 
 	}
 
+	/**
+	 * Adds request to list of requests
+	 * 
+	 * 
+	 */
+
 	@Override
 	public void addRequest(Request req) {
 		requestQueue.enqueue(req);
 
 	}
+
+	/**
+	 * Returns a course of Department and CourseNumber match
+	 * 
+	 * @param c1 Course object to be returned if course matches
+	 * @return c1
+	 */
 
 	@Override
 	public Course getCourse(String courseDept, int courseNumber) {
@@ -179,6 +228,16 @@ public class Controller implements IController {
 		}
 		return c1;
 	}
+
+	/**
+	 * Creates random string for a process ID
+	 * 
+	 * @param alphabet Random characters to use
+	 * @param random   Random number to choose random character
+	 * @param builder  StringBuilder object to build random string
+	 * 
+	 * @return builder.toString()
+	 */
 
 	public String generateString(int length) {
 		String alphabet = "abcde0123456789";
