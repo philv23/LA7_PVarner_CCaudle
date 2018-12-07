@@ -1,17 +1,16 @@
 package edu.wmich.cs1120.LA7.PVarnerCCaudle;
 
 public class Course<E> implements ICourse {
-	
-	
+
 	String dept;
 	String num;
 	int num2;
 	int max;
 	LinkedList<E> list = new LinkedList<E>();
-	
-	
+
 	/**
 	 * Constructor sets it's parameters.
+	 * 
 	 * @param dept
 	 * @param num
 	 * @param max
@@ -26,13 +25,13 @@ public class Course<E> implements ICourse {
 	@Override
 	/**
 	 * Determine if the capacity for this course has been reached.
+	 * 
 	 * @return boolean
 	 */
 	public boolean isFull() {
-		if(list.size() >= max) {
+		if (list.size() >= max) {
 			return true;
-		}
-		else {
+		} else {
 			return false;
 		}
 	}
@@ -40,9 +39,11 @@ public class Course<E> implements ICourse {
 	@Override
 	/**
 	 * Add this student to the linkedlist for enrolled students for this course.
+	 * 
 	 * @param name
 	 */
 	public void addStudent(String name) {
+
 		list.add((E) name);
 	}
 
@@ -52,30 +53,31 @@ public class Course<E> implements ICourse {
 	 */
 	public void printClassList() {
 		LinkedList<E> list2 = list;
-		
-		for(int i = 0; i < list2.size(); i++) {
-			System.out.println(list2.value);
-			list2.head = list2.next;
+		Node j = list2.head;
+		for (int i = 0; i < list2.size(); i++) {
+			System.out.println(j.getData());
+			j = j.next;
 		}
 
 	}
-	
+
 	@Override
 	/**
-	 * Determines if this course object is the same as the object received as parameter.
+	 * Determines if this course object is the same as the object received as
+	 * parameter.
+	 * 
 	 * @param arg0
 	 * @return boolean
 	 */
 	public boolean equals(Object arg0) {
 		Course c = (Course) arg0;
-		
-		if(c.dept == dept && c.num == num) {
+
+		if (c.dept == dept && c.num == num) {
 			return true;
-		}
-		else {
+		} else {
 			return false;
 		}
-		
+
 	}
 
 }

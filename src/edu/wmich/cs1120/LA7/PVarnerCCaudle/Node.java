@@ -4,18 +4,20 @@ public class Node<E> implements INode {
 	private E dataValue;
 	Node<E> nextNode;
 	public Node next;
-	
+
 	/**
 	 * constructor sets dataValue.
+	 * 
 	 * @param dataValue
 	 */
 	public Node(E dataValue) {
 		this.dataValue = dataValue;
-		
-		
+
 	}
+
 	/**
 	 * constructor sets dataValue and calls setNext(nextNode).
+	 * 
 	 * @param dataValue
 	 * @param nextNode
 	 */
@@ -27,6 +29,7 @@ public class Node<E> implements INode {
 	@Override
 	/**
 	 * Returns the data stored in this node.
+	 * 
 	 * @return E
 	 */
 	public E getData() {
@@ -34,8 +37,9 @@ public class Node<E> implements INode {
 	}
 
 	@Override
-	/** 
+	/**
 	 * Returns the node next to this node.
+	 * 
 	 * @return Node
 	 */
 	public Node getNext() {
@@ -45,11 +49,12 @@ public class Node<E> implements INode {
 	@Override
 	/**
 	 * Sets node received as the next node to this node.
+	 * 
 	 * @param next
 	 */
 	public void setNext(Node next) {
 		nextNode = next;
-		
+
 	}
 
 }
